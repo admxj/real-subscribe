@@ -67,7 +67,6 @@ export default class User extends React.Component {
                         </Content>
                     </Layout>
                 </Layout>
-
             </Layout>
         );
     }
