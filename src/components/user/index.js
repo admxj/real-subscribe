@@ -3,7 +3,6 @@ import {Link, Route, Switch} from "react-router-dom";
 import Node from "./node/Node";
 import Share from "./share/Share";
 import Subscribe from "./subscribe/Subscribe";
-
 import {Breadcrumb, Layout, Menu} from "antd";
 
 const {Content, Sider} = Layout;
