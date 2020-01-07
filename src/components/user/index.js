@@ -4,10 +4,9 @@ import Node from "./node/Node";
 import Share from "./share/Share";
 import Subscribe from "./subscribe/Subscribe";
 
-import {Layout, Menu, Breadcrumb, Icon} from "antd";
+import {Breadcrumb, Layout, Menu} from "antd";
 
-const {SubMenu} = Menu;
-const {Header, Content, Sider} = Layout;
+const {Content, Sider} = Layout;
 
 export default class User extends React.Component {
 

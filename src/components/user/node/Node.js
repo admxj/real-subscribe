@@ -1,5 +1,6 @@
 import React from "react";
-import {Row, Col, DatePicker, Button, List, Typography, Layout, Icon} from 'antd';
+import {Avatar, Button, List, Row, Skeleton} from 'antd';
+import AddNode from "./AddNode";
 
 export default class Node extends React.Component {
 
@@ -12,18 +13,43 @@ export default class Node extends React.Component {
                 'Australian walks 100km after outback crash.',
                 'Man charged over missing wedding girl.',
                 'Los Angeles battles huge wildfires.',
-            ]
+            ],
+            modelVisible: false
         };
     }
 
+    editOnClick() {
+
+    }
+
+    delOnClick() {
+
+    }
+
     addButtonOnclick() {
-        alert("123")
+        this.setState({
+            modelVisible: true,
+        });
+    }
+
+    modelHandleCancel(e) {
+        this.setState({
+            modelVisible: false,
+        });
+    }
+
+    modelHandleOk(e) {
+        this.setState({
+            modelVisible: false,
+        });
     }
 
     render() {
         return (
-            <Layout>
-                <Button onClick={this.addButtonOnclick} type={"primary"}>Button</Button>
+            <div>
+                <Button onClick={this.addButtonOnclick.bind(this)} type={"primary"}>Button</Button>
+                <AddNode visible={this.state.modelVisible} handleOk={this.modelHandleOk.bind(this)}
+                         handleCancel={this.modelHandleCancel.bind(this)}/>
                 <Row>
                     <List
                         header={<div>Header</div>}
@@ -31,26 +57,30 @@ export default class Node extends React.Component {
                         bordered
                         dataSource={this.state.data}
                         renderItem={item => (
-                            <List.Item>
-                                <Row >
-                                    <Col span={6}>icon</Col>
-                                    <Col span={6}>{item} </Col>
-                                    <Col span={6}>
-                                        <Button type="primary" shape="circle">
-                                            <Icon type="delete"/>
-                                        </Button>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Button type="danger" shape="circle">
-                                            <Icon type="edit"/>
-                                        </Button>
-                                    </Col>
-                                </Row>
+                            <List.Item
+                                actions={[
+                                    <Button type="primary" key="list-loadmore-edit"
+                                            onClick={this.editOnClick}>edit</Button>,
+                                    <Button type="primary" key="list-loadmore-more"
+                                            onClick={this.delOnClick}>del</Button>
+                                ]}
+                            >
+                                <Skeleton avatar title={false} loading={item.loading} active>
+                                    <List.Item.Meta
+                                        avatar={
+                                            <Avatar
+                                                src="https://cdn.admxj.com/wp-content/uploads/2019/01/icon-1.png"/>
+                                        }
+                                        title={item}
+                                        description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                    />
+                                    <div>content</div>
+                                </Skeleton>
                             </List.Item>
                         )}
                     />
                 </Row>
-            </Layout>
+            </div>
         );
     }
 }
