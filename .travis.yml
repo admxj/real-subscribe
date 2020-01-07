@@ -4,6 +4,7 @@ node_js:
 branches:
   only:
     - master
+    - v*
 script:
   - npm install
   - npm run build
