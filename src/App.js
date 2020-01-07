@@ -12,11 +12,8 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                {/*<Login></Login>*/}
                 <Router>
                     <div>
-                        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
                         <Switch>
                             <Route path="/user">
                                 <User/>
