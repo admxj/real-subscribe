@@ -4,5 +4,5 @@ node_js:
 script:
   - npm install
   - npm run build
-  - docker build -t lingzi/blog .
+  - docker build -t admxj/real-subscribe .
 
