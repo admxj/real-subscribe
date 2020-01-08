@@ -1,3 +1,4 @@
+os: linux
 language: node_js
 node_js:
   - 12
@@ -10,6 +11,8 @@ script:
   - npm run build
   - tar -zcvf release.tag.gz build/*
   - docker build -t admxj/real-subscribe .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push
 
 before_deploy:
   - npm install
