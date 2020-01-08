@@ -12,7 +12,7 @@ script:
   - tar -zcvf release.tag.gz build/*
   - docker build -t admxj/real-subscribe .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push
+  - docker push admxj/real-subscribe
 
 before_deploy:
   - npm install
