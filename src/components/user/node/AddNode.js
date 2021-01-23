@@ -41,19 +41,22 @@ export default class AddNode extends React.Component {
                             <Radio value={3}>SS</Radio>
                         </Radio.Group>
                     </Form.Item>
-                    <Form.Item label="E-Mail">
+                    <Form.Item label="Host">
                         <Input></Input>
                     </Form.Item>
-                    <Form.Item label="E-Mail">
+                    <Form.Item label="Address">
                         <Input></Input>
                     </Form.Item>
-                    <Form.Item label="E-Mail">
+                    <Form.Item label="Port">
                         <Input></Input>
                     </Form.Item>
-                    <Form.Item label="E-Mail">
+                    <Form.Item label="password">
                         <Input></Input>
                     </Form.Item>
-                    <Form.Item label="E-Mail">
+                    <Form.Item label="path">
+                        <Input></Input>
+                    </Form.Item>
+                    <Form.Item label="remark">
                         <Input></Input>
                     </Form.Item>
                 </Form>

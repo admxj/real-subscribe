@@ -2,7 +2,8 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import User from './components/user/index'
 import {
-    BrowserRouter as Router,
+    // BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route
 } from 'react-router-dom';
@@ -12,18 +13,18 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Router>
+                <Router >
                     <div>
                         <Switch>
-                            <Route path="/user">
+                            <Route path="/">
                                 <User/>
                             </Route>
                             <Route path="/users">
                                 <span>users</span>
                             </Route>
-                            <Route path="/">
-                                <span>root</span>
-                            </Route>
+                            {/*<Route path="/">*/}
+                            {/*    <span>root</span>*/}
+                            {/*</Route>*/}
                         </Switch>
                     </div>
                 </Router>

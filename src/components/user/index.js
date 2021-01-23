@@ -33,9 +33,9 @@ export default class User extends React.Component {
                             defaultOpenKeys={['sub1']}
                             style={{height: '100%', borderRight: 0}}
                         >
-                            <Menu.Item key="1"><Link to="/user/node">Node</Link></Menu.Item>
-                            <Menu.Item key="2"><Link to="/user/share">share</Link></Menu.Item>
-                            <Menu.Item key="3"><Link to="/user/subscribe">subscribe</Link></Menu.Item>
+                            <Menu.Item key="1"><Link to="node">Node</Link></Menu.Item>
+                            <Menu.Item key="2"><Link to="share">share</Link></Menu.Item>
+                            <Menu.Item key="3"><Link to="subscribe">subscribe</Link></Menu.Item>
                         </Menu>
                     </Sider>
                     <Layout style={{padding: '0 24px 24px'}}>
@@ -53,13 +53,13 @@ export default class User extends React.Component {
                             }}
                         >
                             <Switch>
-                                <Route path="/user/node">
+                                <Route path="/node">
                                     <Node/>
                                 </Route>
-                                <Route path="/user/share">
+                                <Route path="/share">
                                     <Share/>
                                 </Route>
-                                <Route path="/user/subscribe">
+                                <Route path="/subscribe">
                                     <Subscribe/>
                                 </Route>
                             </Switch>
